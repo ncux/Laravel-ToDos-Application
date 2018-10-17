@@ -13,7 +13,7 @@
 
             <a href="/todos/{{$todo->id}}/edit" class="btn btn-info my-3">Edit</a>
 
-            {!! Form::open(['action'=>['ToDosController@destroy', $todo->id], 'method'=>'POST']) !!}
+            {!! Form::open(['action'=>['ToDosController@destroy', $todo->id], 'method'=>'POST', 'onsubmit'=>'return confirm("Delete this item?")']) !!}
 
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Delete', ['class'=>'btn btn-danger'])}}
